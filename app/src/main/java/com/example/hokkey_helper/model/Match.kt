@@ -4,5 +4,4 @@ data class Match(
     val id:String,
     val commands: Pair<String,String>,
     val name:String,
-    val score: Pair<Int,Int>
 )

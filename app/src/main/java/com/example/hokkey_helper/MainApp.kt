@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import com.example.hokkey_helper.di.AppComponent
 import com.example.hokkey_helper.di.DaggerAppComponent
+import com.orhanobut.hawk.Hawk
 
 class MainApp : Application() {
     val appComponent: AppComponent by lazy {
@@ -12,6 +13,7 @@ class MainApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
+        Hawk.init(this).build()
         instance = this
     }
 

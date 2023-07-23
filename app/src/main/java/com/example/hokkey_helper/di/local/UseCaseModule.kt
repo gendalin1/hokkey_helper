@@ -1,7 +1,8 @@
 package com.example.hokkey_helper.di.local
 
 import com.example.hokkey_helper.repository.interfaces.MatchesRepository
-import com.example.hokkey_helper.repository.interfaces.UserReporitory
+import com.example.hokkey_helper.repository.interfaces.UserRepository
+import com.example.hokkey_helper.useCases.AddPermissionToUserUseCase
 import com.example.hokkey_helper.useCases.GetCommandUseCase
 import com.example.hokkey_helper.useCases.GetCountryUseCase
 import com.example.hokkey_helper.useCases.GetMatchesUseCase
@@ -37,8 +38,15 @@ class UseCaseModule {
     @Provides
     @Singleton
     fun provideUserPermissionUseCase(
-        repository: UserReporitory,
+        repository: UserRepository,
     ): GetUserPermissionUseCase =
         GetUserPermissionUseCase(repository)
+
+    @Provides
+    @Singleton
+    fun provideAddUserPermissionUseCase(
+        repository: UserRepository,
+    ): AddPermissionToUserUseCase =
+        AddPermissionToUserUseCase(repository)
 
 }

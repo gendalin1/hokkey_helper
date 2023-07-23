@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_matches">
+
+    <fragment
+        android:id="@+id/navigation_matches"
+        android:name="com.example.hokkey_helper.ui.matches.MatchesFragment"
+        android:label="@string/title_matches"
+        tools:layout="@layout/fragment_matches" />
+
+    <fragment
+        android:id="@+id/navigation_rule"
+        android:name="com.example.hokkey_helper.ui.rule.RuleFragment"
+        android:label="@string/title_rules"
+        tools:layout="@layout/fragment_rules" />
+
+    <fragment
+        android:id="@+id/navigation_assistant"
+        android:name="com.example.hokkey_helper.ui.assistant.AssistantFragment"
+        android:label="@string/title_assistent"
+        tools:layout="@layout/fragment_assistant" />
+
+    <fragment
+        android:id="@+id/navigation_store"
+        android:name="com.example.hokkey_helper.ui.store.StoreFragment"
+        android:label="@string/title_store"
+        tools:layout="@layout/fragment_store" />
+
+    <fragment
+        android:id="@+id/match_detail"
+        android:name="com.example.hokkey_helper.ui.matchDetail.MatchDetailFragment"
+        tools:layout="@layout/fragment_match_detail"/>
+</navigation>

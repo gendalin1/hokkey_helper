@@ -28,7 +28,11 @@ class MatchesFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentMatchesBinding.inflate(inflater, container, false)
-        val adapter = MatchesAdapter()
+        val adapter = MatchesAdapter(
+            {
+                viewModel.addPermissions(it)
+            }
+        )
         binding.recycler.adapter = adapter
         viewModel.initData()
 
@@ -37,8 +41,7 @@ class MatchesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         viewModel.matchesDataResult.observe(viewLifecycleOwner){
-            Log.e("AAA","${it.size}")
-            (binding.recycler.adapter as MatchesAdapter).refresh(it)
+            (binding.recycler.adapter as MatchesAdapter).refresh(it.map{it.copy()})
         }
         super.onViewCreated(view, savedInstanceState)
     }

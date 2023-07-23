@@ -1,7 +1,9 @@
 package com.example.hokkey_helper.di
 
 import android.app.Application
+import com.example.hokkey_helper.MainActivityViewModel
 import com.example.hokkey_helper.ui.assistant.AssistantViewModel
+import com.example.hokkey_helper.ui.matchDetail.MatchDetailViewModel
 import com.example.hokkey_helper.ui.matches.MatchesViewModel
 import com.example.hokkey_helper.ui.rule.RuleViewModel
 import com.example.hokkey_helper.ui.store.StoreViewModel
@@ -25,9 +27,11 @@ interface AppComponent {
         ): AppComponent
     }
 
+    fun inject(viewModel: MainActivityViewModel)
     fun inject(viewModel: MatchesViewModel)
     fun inject(viewModel: RuleViewModel)
     fun inject(viewModel: AssistantViewModel)
     fun inject(viewModel: StoreViewModel)
+    fun inject(viewModel:MatchDetailViewModel)
 
 }

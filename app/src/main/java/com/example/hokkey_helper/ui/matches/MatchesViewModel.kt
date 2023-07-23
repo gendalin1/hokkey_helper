@@ -1,5 +1,6 @@
 package com.example.hokkey_helper.ui.matches
 
+import android.util.Log
 import androidx.collection.ArraySet
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -14,6 +15,7 @@ import com.example.hokkey_helper.model.Match
 import com.example.hokkey_helper.model.MatchData
 import com.example.hokkey_helper.model.SaleData
 import com.example.hokkey_helper.model.enum.SaleType
+import com.example.hokkey_helper.useCases.AddPermissionToUserUseCase
 import com.example.hokkey_helper.useCases.GetCommandUseCase
 import com.example.hokkey_helper.useCases.GetCountryUseCase
 import com.example.hokkey_helper.useCases.GetMatchesUseCase
@@ -38,6 +40,9 @@ class MatchesViewModel : ViewModel() {
     lateinit var getUserPermissionUseCase: GetUserPermissionUseCase
 
     @Inject
+    lateinit var addPermissionToUserUseCase: AddPermissionToUserUseCase
+
+    @Inject
     lateinit var userManager: UserManager
 
 
@@ -59,6 +64,13 @@ class MatchesViewModel : ViewModel() {
     private val _matchesDataResult = MutableLiveData<List<MatchData>>()
     val matchesDataResult: LiveData<List<MatchData>> = _matchesDataResult
 
+    fun addPermissions(saleList: List<SaleData>){
+        saleList.forEach {
+            addPermissionToUserUseCase.execute(userManager.userId, it.id)
+        }
+        _userPermission.value = getUserPermissionUseCase.execute(userManager.userId)
+    }
+
     fun initData(){
         _countryData.value = getCountryUseCase.execute()
         _commandData.value = getCommandUseCase.execute()
@@ -71,6 +83,7 @@ class MatchesViewModel : ViewModel() {
             _matchesData.asFlow(),
             _userPermission.asFlow()
         ){ counries, commands, matches, permission ->
+            Log.e("AAA","${permission}")
             val result = ArrayList<MatchData>()
             matches.forEach{match ->
                 val pairCommands  = (commands.first{ it.id == match.commands.first} to commands.first{it.id == match.commands.second})
@@ -96,7 +109,7 @@ class MatchesViewModel : ViewModel() {
                             pairCountry.second.price ?: 0)) }
 
 
-                if (pairCommands.first.isBlock && !permission.contains(pairCountry.second.id)){
+                if (pairCommands.first.isBlock && !permission.contains(pairCommands.first.id)){
                     isBlocked = true
                     priceList.add(
                         SaleData(
@@ -105,7 +118,7 @@ class MatchesViewModel : ViewModel() {
                             pairCommands.first.name,
                             pairCommands.first.price ?: 0)) }
 
-                if (pairCommands.second.isBlock && !permission.contains(pairCountry.second.id)){
+                if (pairCommands.second.isBlock && !permission.contains(pairCommands.second.id)){
                     isBlocked = true
                     priceList.add(
                         SaleData(

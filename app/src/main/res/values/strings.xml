@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">hokkey_helper</string>
+    <string name="title_store">Магазин</string>
+    <string name="title_rules">Правила</string>
+    <string name="title_matches">Матчи</string>
+    <string name="title_assistent">Ассистент</string>
+    <string name="go_to_shop">Перейти в магазин.</string>
+</resources>
