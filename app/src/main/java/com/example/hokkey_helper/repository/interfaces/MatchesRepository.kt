@@ -7,9 +7,11 @@ import com.example.hokkey_helper.model.Sportsmen
 import com.example.hokkey_helper.model.data.MatchDetail
 
 interface MatchesRepository {
-    fun getCountry():List<Country>
-    fun getCommand():List<Command>
+    fun getCountries():List<Country>
+    fun getCommands():List<Command>
     fun getMatches():List<Match>
     fun getSportsmen(id:String):Sportsmen
     fun getMatchDetail(id:String): Pair<Match,MatchDetail>
+    fun getCommand(id:String):Command
+    fun getCountry(id:String):Country
 }

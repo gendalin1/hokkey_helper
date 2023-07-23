@@ -4,19 +4,281 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.rule.DashboardFragment">
+    tools:context=".ui.rule.RuleFragment">
 
-    <TextView
-        android:id="@+id/text_dashboard"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/section_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/preview_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/back"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                >
+
+                <TextView
+                    android:id="@+id/preview_title_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Площадка: "
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+                <TextView
+                    android:id="@+id/show_more_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:text=">"
+                    app:layout_constraintStart_toEndOf="@id/preview_title_1"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/full_info_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/preview_1"
+                android:visibility="gone"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text ="Хоккейная площадка — то самое место, где и проходят ледовые баталии между соперниками. Казалось бы, что может быть особенного в холодной белой поверхности, ограниченной бортами? На самом деле особенностей много, особенно для Континентальной хоккейной лиги, где до сих пор не могут определиться, какими едиными должны быть размеры той самой ледяной поверхности. Всего существует три общепризнанных стандарта:Европейский (30 метров в ширину — 60 метров в длину); Финский (28 метров в ширину — 60 метров в длину); Канадский (26 метров в ширину, 60 метров в длину).
+Борт — элемент хоккейной площадки, который ограничивает ледовую поверхность. Его углы должны быть скруглены, чтобы шайба не останавливала ход, а игроки — избегали травм. Высота бортов над уровнем льда должна составлять от 117 до 122 сантиметров по международным правилам и от 102 до 122 сантиметров по правилам НХЛ. Кроме того, за воротами сверху устанавливаются прозрачные заградительные стекла, высота которых должна быть не менее 160 сантиметров.
+"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:textColor="@color/text_color"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/section_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/preview_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/back"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                >
+
+                <TextView
+                    android:id="@+id/preview_title_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Штрафы: "
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+                <TextView
+                    android:id="@+id/show_more_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:text=">"
+                    app:layout_constraintStart_toEndOf="@id/preview_title_2"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/full_info_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/preview_2"
+                android:visibility="gone"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text ="Регламент различных хоккейный турниров — вещь непостоянная. Практически перед каждым сезоном в него вносятся различные поправки, а порой и по ходу чемпионата появляются дополнения и нюансы. Разумеется, всё это касается и нарушений правил, которые регулярно меняются, а уж про разнообразие трактовок и вовсе говорить не приходится, ведь каждый видит так, как ему хочется. Поэтому расписывать все тонкости хоккейных штрафов мы не будем, ограничившись лишь общей классификацией:
+малый штраф — двухминутное удаление;
+большой штраф — пятиминутное удаление;
+дисциплинарный штраф — десятиминутное удаление;
+дисциплинарный штраф до конца матча — удаление до конца матча;
+матч-штраф — автоматический пропуск следующего матча."
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:textColor="@color/text_color"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/section_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/preview_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/back"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                >
+
+                <TextView
+                    android:id="@+id/preview_title_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Терминология: "
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+                <TextView
+                    android:id="@+id/show_more_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:text=">"
+                    app:layout_constraintStart_toEndOf="@id/preview_title_3"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/full_info_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/preview_3"
+                android:visibility="gone"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text ="Большинство – игровая ситуация, при которой одна команда получает численное преимущество из-за того, что другая нарушила правила и получила удаление. Важно отметить, что одновременно на скамейке штрафников могут находиться неограниченное количество хоккеистов, однако на льду менее трёх полевых игроков всё равно не будет.
+
+«Вне игры» – положение, при котором оба конька игрока атакующей команды оказываются за синей линией зоны соперника раньше, чем шайба. Казалось бы, простейшее на словах правило, однако порой определить правильность входа в зону тяжело даже при помощи видеоповтора, а уж в режиме реального времени линейным судьям работать ещё тяжелее.
+
+Вратарь – хоккеист, главная задача которого — сохранение собственных ворот в неприкосновенности. Главными статистическими показателями вратаря, определяющими его уровень являются коэффициент надёжности — среднее количество пропущенных шайб за матч, а также процент отражённых бросков.
+
+Замена вратаря – игровой эпизод, при котором голкипер отправляется на скамейку запасных, а вместо него на льду появляется дополнительный полевой игрок. Чаще всего такой шаг используется в двух случаях: если команда проигрывает в концовке игры и нужно оказать максимальное давление на ворота соперника, либо при отложенном штрафе у оппонента.
+
+Зона атаки – часть ледовой площадки для нападающей команды, ограниченная синей линией соперника. Если шайба покидает этот участок поля, то все атакующие игроки должны покинуть зону, чтобы не было зафиксировано положение «вне игры».
+Средняя зона – часть ледовой площадки, находящаяся между двумя зонами атаки. Здесь располагается центральный круг, а также пять точек для вбрасывания: одна — в центре, по две — над синими линиями в каждой из половин площадки.
+Капитан – полевой игрой команды, который наделён особыми полномочиями и литерой «C» на игровом свитере. Как правило, роль капитана выполняет самый уважаемый, опытный и харизматичный хоккеист, выступающий длительное время в одном клубе, что позволяет ему быть «проводником» между тренером и другими хоккеистами.
+
+«Плюс-минус» – статистический показатель, определяющий степень полезности того или иного игрока. Считается он следующим образом: суммируются все пропущенные и заброшенные шайбы, когда хоккеист находился на площадке. Для подсчёта используются только голы, состоявшиеся в равных составах.
+
+Силовой приём – действие, нацеленное на отбор шайбы у оппонента. Порой силовые приёмы совершают не только для того, чтобы завладеть шайбой, но и для провокации соперника или с желанием завести трибуны. Важно, что силовой приём не приводит к нарушению правил, иначе — это просто грязный и грубый поступок.
+
+Тафгай – игрок силового плана, который редко отличается хорошей результативностью, но и решает он совершенно другие задачи, устрашая лидеров соперника, чтобы те не показали свой лучший хоккей. Иногда тафгаи из разных команд устраивают яркие кулачные поединки, чтобы позабавить собравшуюся публику.
+"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:textColor="@color/text_color"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/section_4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/preview_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/back"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                >
+
+                <TextView
+                    android:id="@+id/preview_title_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Командный состав: "
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+                <TextView
+                    android:id="@+id/show_more_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:text=">"
+                    app:layout_constraintStart_toEndOf="@id/preview_title_4"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/full_info_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/preview_4"
+                android:visibility="gone"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Защитники должны уметь быстро реагировать на ситуацию, моментально менять направление бега, быть устойчивыми на коньках, пресекать атаки и создавать контратакующие действия. Они призваны обеспечить безопасность своей части поля. Лучшие представители участвуют в нападениях на вражеские ворота и выступают партнёрами нападающих.
+Крайние нападающие для достижения успеха используют внезапность, мгновенную реакцию, обманные стратегии и способность выигрывать в силовом противостоянии с противником. В их задачи входит согласование действий с центральным форвардом и забивание голов. При потере шайбы они стремятся вернуть контроль над снарядом, в случае неудачи немедленно возвращаются в свой сектор и участвуют в обороне.
+Центральный нападающий занимает основное место на арене, эту позицию предоставляют самым талантливым участникам, знающим все нюансы и сложности игрового процесса. Он постоянно анализирует текущую ситуацию, организует и возглавляет атаку. Здесь необходимо быстрое мышление и профессионализм, умение быть лидером. В обороне этот игрок помогает защитникам, т. е. действует на всей площадке.
+Голкипер, стоящий на воротах, обязан уметь переносить большие нагрузки, быть всегда собранным, не расслабляться ни на мгновение во время всего матча. Его грамотная стратегия защиты способна принести победу команде."
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:textColor="@color/text_color"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

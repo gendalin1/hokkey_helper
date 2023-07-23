@@ -3,8 +3,8 @@ package com.example.hokkey_helper.di.local
 import com.example.hokkey_helper.repository.interfaces.MatchesRepository
 import com.example.hokkey_helper.repository.interfaces.UserRepository
 import com.example.hokkey_helper.useCases.AddPermissionToUserUseCase
-import com.example.hokkey_helper.useCases.GetCommandUseCase
-import com.example.hokkey_helper.useCases.GetCountryUseCase
+import com.example.hokkey_helper.useCases.GetCommandsUseCase
+import com.example.hokkey_helper.useCases.GetCountriesUseCase
 import com.example.hokkey_helper.useCases.GetMatchesUseCase
 import com.example.hokkey_helper.useCases.GetUserPermissionUseCase
 import dagger.Module
@@ -18,15 +18,15 @@ class UseCaseModule {
     @Singleton
     fun provideCountryUseCase(
         repository: MatchesRepository,
-    ): GetCountryUseCase =
-        GetCountryUseCase(repository)
+    ): GetCountriesUseCase =
+        GetCountriesUseCase(repository)
 
     @Provides
     @Singleton
     fun provideCommandUseCase(
         repository: MatchesRepository,
-    ): GetCommandUseCase =
-        GetCommandUseCase(repository)
+    ): GetCommandsUseCase =
+        GetCommandsUseCase(repository)
 
     @Provides
     @Singleton

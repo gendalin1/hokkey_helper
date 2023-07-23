@@ -144,11 +144,11 @@ class MatchesRepositoryImpl(): MatchesRepository {
 
 
 
-    override fun getCountry(): List<Country> {
+    override fun getCountries(): List<Country> {
         return countryList
     }
 
-    override fun getCommand(): List<Command> {
+    override fun getCommands(): List<Command> {
         return commandList
     }
 
@@ -158,6 +158,15 @@ class MatchesRepositoryImpl(): MatchesRepository {
     override fun getSportsmen(id: String): Sportsmen {
         return sportsmen.first{it.id == id}
     }
+
+    override fun getCountry(id: String): Country {
+        return countryList.first { it.id == id }
+    }
+
+    override fun getCommand(id: String): Command {
+        return commandList.first{ it.id == id}
+    }
+
 
     override fun getMatchDetail(id: String): Pair<Match, MatchDetail> {
         val match = matchList.first { it.id == id }

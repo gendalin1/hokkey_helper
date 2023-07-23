@@ -4,8 +4,8 @@ import com.example.hokkey_helper.model.Command
 import com.example.hokkey_helper.repository.interfaces.MatchesRepository
 import javax.inject.Inject
 
-class GetCommandUseCase @Inject constructor(val matchesRepository: MatchesRepository) {
+class GetCommandsUseCase @Inject constructor(val matchesRepository: MatchesRepository) {
     fun execute():List<Command>{
-        return matchesRepository.getCommand()
+        return matchesRepository.getCommands()
     }
 }

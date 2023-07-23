@@ -72,7 +72,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/vs"
                 android:layout_marginEnd="5dp"
                 android:textColor="@color/text_color"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 app:layout_constraintTop_toBottomOf="@+id/count"
                 />
 
@@ -85,7 +85,7 @@
                 app:layout_constraintStart_toEndOf="@+id/vs"
                 android:layout_marginStart="5dp"
                 android:textColor="@color/text_color"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 app:layout_constraintTop_toBottomOf="@+id/count"
                 />
 
@@ -102,7 +102,7 @@
                     android:id="@+id/preview_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/deep_blue"
+                    android:background="@drawable/match_preview"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     >
@@ -130,10 +130,12 @@
                         android:id="@+id/show_more_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20sp"
+                        android:textSize="25sp"
                         android:text=">"
                         app:layout_constraintStart_toEndOf="@id/first_image"
-                        app:layout_constraintTop_toTopOf="parent"/>
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:textColor="@color/white"/>
 
 
 
@@ -144,6 +146,7 @@
                     android:id="@+id/full_info_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="gone"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/preview_1"
                     >
@@ -153,6 +156,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Название: "
+                        android:textColor="@color/text_color"
                         android:textSize="16sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -162,6 +166,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="16sp"
+                        android:textColor="@color/text_color"
                         app:layout_constraintBottom_toBottomOf="@+id/name_1"
                         app:layout_constraintStart_toEndOf="@+id/name_1"
                         app:layout_constraintTop_toTopOf="@+id/name_1" />
@@ -172,12 +177,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Страна: "
+                        android:textColor="@color/text_color"
                         android:textSize="16sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/name_1" />
 
                     <TextView
                         android:id="@+id/field_country_1"
+                        android:textColor="@color/text_color"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="16sp"
@@ -190,6 +197,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Тренер: "
+                        android:textColor="@color/text_color"
                         android:textSize="16sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/country_1" />
@@ -199,6 +207,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="16sp"
+                        android:textColor="@color/text_color"
                         app:layout_constraintBottom_toBottomOf="@+id/trainer_1"
                         app:layout_constraintStart_toEndOf="@+id/trainer_1"
                         app:layout_constraintTop_toTopOf="@+id/trainer_1" />
@@ -209,6 +218,7 @@
                         android:layout_height="wrap_content"
                         android:text="Состав: "
                         android:textSize="16sp"
+                        android:textColor="@color/text_color"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/trainer_1" />
 
@@ -243,7 +253,7 @@
                     android:id="@+id/preview_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/deep_blue"
+                    android:background="@drawable/match_preview"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     >
@@ -271,18 +281,17 @@
                         android:id="@+id/show_more_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20sp"
+                        android:textSize="25sp"
                         android:text=">"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@id/second_image"
                         app:layout_constraintTop_toTopOf="parent"/>
-
-
-
                 </androidx.constraintlayout.widget.ConstraintLayout>
-
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/full_info_2"
+                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -294,6 +303,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Название: "
+                        android:textColor="@color/text_color"
                         android:textSize="16sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -302,6 +312,7 @@
                         android:id="@+id/field_name_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/text_color"
                         android:textSize="16sp"
                         app:layout_constraintBottom_toBottomOf="@+id/name_2"
                         app:layout_constraintStart_toEndOf="@+id/name_2"
@@ -313,6 +324,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Страна: "
+                        android:textColor="@color/text_color"
                         android:textSize="16sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/name_2" />
@@ -321,6 +333,7 @@
                         android:id="@+id/field_country_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/text_color"
                         android:textSize="16sp"
                         app:layout_constraintBottom_toBottomOf="@+id/country_2"
                         app:layout_constraintStart_toEndOf="@+id/country_2"
@@ -328,6 +341,7 @@
 
                     <TextView
                         android:id="@+id/trainer_2"
+                        android:textColor="@color/text_color"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Тренер: "
@@ -337,6 +351,7 @@
 
                     <TextView
                         android:id="@+id/field_trainer_2"
+                        android:textColor="@color/text_color"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="16sp"
@@ -346,6 +361,7 @@
 
                     <TextView
                         android:id="@+id/sportsmens_2"
+                        android:textColor="@color/text_color"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Состав: "

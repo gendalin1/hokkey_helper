@@ -1,7 +1,5 @@
 package com.example.hokkey_helper.ui.matches
 
-import android.util.Log
-import androidx.collection.ArraySet
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -16,22 +14,21 @@ import com.example.hokkey_helper.model.MatchData
 import com.example.hokkey_helper.model.SaleData
 import com.example.hokkey_helper.model.enum.SaleType
 import com.example.hokkey_helper.useCases.AddPermissionToUserUseCase
-import com.example.hokkey_helper.useCases.GetCommandUseCase
-import com.example.hokkey_helper.useCases.GetCountryUseCase
+import com.example.hokkey_helper.useCases.GetCommandsUseCase
+import com.example.hokkey_helper.useCases.GetCountriesUseCase
 import com.example.hokkey_helper.useCases.GetMatchesUseCase
 import com.example.hokkey_helper.useCases.GetUserPermissionUseCase
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.launchIn
-import java.security.Permission
 import javax.inject.Inject
 
 class MatchesViewModel : ViewModel() {
 
     @Inject
-    lateinit var getCountryUseCase: GetCountryUseCase
+    lateinit var getCountryUseCase: GetCountriesUseCase
 
     @Inject
-    lateinit var getCommandUseCase: GetCommandUseCase
+    lateinit var getCommandUseCase: GetCommandsUseCase
 
     @Inject
     lateinit var getMatchesUseCase: GetMatchesUseCase
