@@ -83,7 +83,6 @@ class MatchesViewModel : ViewModel() {
             _matchesData.asFlow(),
             _userPermission.asFlow()
         ){ counries, commands, matches, permission ->
-            Log.e("AAA","${permission}")
             val result = ArrayList<MatchData>()
             matches.forEach{match ->
                 val pairCommands  = (commands.first{ it.id == match.commands.first} to commands.first{it.id == match.commands.second})

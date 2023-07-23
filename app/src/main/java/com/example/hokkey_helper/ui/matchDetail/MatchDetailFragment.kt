@@ -30,7 +30,6 @@ class MatchDetailFragment : Fragment() {
     ): View {
         binding = FragmentMatchDetailBinding.inflate(inflater, container, false)
         viewModel.id = matchId
-        Log.e("AAA","${matchId}")
         firstAdapter = SportsmensAdapter()
         secondAdapter = SportsmensAdapter()
         binding.recycler1.adapter = firstAdapter

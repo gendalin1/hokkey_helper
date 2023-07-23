@@ -10,7 +10,7 @@ class ShakeDetector(private val context: Context, private val listener: OnShakeL
     SensorEventListener {
 
     private val shakeThresholdGravity = 2.7f // Это значение можно настроить под свои нужды
-    private val shakeTimeLapse = 500 // Интервал времени между двумя событиями тряски в миллисекундах
+    private val shakeTimeLapse = 2000
     private var lastShakeTime: Long = 0
 
     override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {

@@ -5,6 +5,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.hokkey_helper.di.UserManager
+import com.example.hokkey_helper.model.ActualMatch
+import com.example.hokkey_helper.model.Sportsmen
 import javax.inject.Inject
 
 class MainActivityViewModel : ViewModel() {
@@ -15,4 +17,8 @@ class MainActivityViewModel : ViewModel() {
     }
 
     var goToShop:() -> Unit ={}
+
+
+    val time = MutableLiveData<Long>(0)
+    val actualMatch = MutableLiveData<ActualMatch>(ActualMatch("111144",0 to 0, "" to ""))
 }
