@@ -84,21 +84,14 @@ class MatchDetailFragment : Fragment() {
         }
 
         binding.preview1.setOnClickListener {
-            if(!binding.fullInfo1.isVisible){
-                binding.showMore1.animate().rotation(
-                    90f
-                ).withEndAction {
-                    binding.fullInfo1.isVisible = !binding.fullInfo1.isVisible
-                }.duration = 500
-                binding.showMore1.animate()
-            }else{
-                binding.showMore1.animate().rotation(
-                    0f
-                ).withEndAction {
-                    binding.fullInfo1.isVisible = !binding.fullInfo1.isVisible
-                }.duration = 500
-                binding.showMore1.animate()
-            }
+            val rotation = if(!binding.fullInfo1.isVisible)
+                90f else 0f
+            binding.showMore1.animate().rotation(
+                rotation
+            ).withEndAction {
+                binding.fullInfo1.isVisible = !binding.fullInfo1.isVisible
+            }.duration = 500
+            binding.showMore1.animate()
         }
         binding.preview2.setOnClickListener {
             val rotation = if(!binding.fullInfo2.isVisible)

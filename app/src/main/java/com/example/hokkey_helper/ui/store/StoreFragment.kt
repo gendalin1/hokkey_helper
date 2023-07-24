@@ -61,7 +61,7 @@ class StoreFragment : Fragment() {
     private fun startAnimation() {
         val screenWidth = resources.displayMetrics.widthPixels
         val rotateAnimation = RotateAnimation(
-            0f, 360f,
+            0f, 720f,
             Animation.RELATIVE_TO_SELF, 0.5f,
             Animation.RELATIVE_TO_SELF, 0.5f
         )

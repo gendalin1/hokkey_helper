@@ -69,7 +69,6 @@ class BuyMatchDialogFragment: DialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         val sum = (matchData?.priceList?.sumOf { it.price } ?: 0)
-        Log.e("AAA","${sum}")
 
         if ((mainViewModel.userManager.coins.value?: 0)< sum ){
             binding.buySomething.visibility = View.GONE

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="IndicatorLayout">
+        <attr name="indicatorCount" format="integer"/>
+    </declare-styleable>
+    <declare-styleable name="ShowCaseLayout">
+        <attr name="showCaseCount" format="integer"/>
+    </declare-styleable>
+
+</resources>

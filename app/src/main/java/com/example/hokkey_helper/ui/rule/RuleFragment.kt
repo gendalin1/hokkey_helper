@@ -31,16 +31,44 @@ class RuleFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.preview1.setOnClickListener {
-            binding.fullInfo1.isVisible = !binding.fullInfo1.isVisible
+            val rotation = if(!binding.fullInfo1.isVisible)
+                90f else 0f
+            binding.showMore1.animate().rotation(
+                rotation
+            ).withEndAction {
+                binding.fullInfo1.isVisible = !binding.fullInfo1.isVisible
+            }.duration = 500
+            binding.showMore1.animate()
         }
         binding.preview2.setOnClickListener {
-            binding.fullInfo2.isVisible = !binding.fullInfo2.isVisible
+            val rotation = if(!binding.fullInfo2.isVisible)
+                90f else 0f
+            binding.showMore2.animate().rotation(
+                rotation
+            ).withEndAction {
+                binding.fullInfo2.isVisible = !binding.fullInfo2.isVisible
+            }.duration = 500
+            binding.showMore2.animate()
         }
         binding.preview3.setOnClickListener {
-            binding.fullInfo3.isVisible = !binding.fullInfo3.isVisible
+            val rotation = if(!binding.fullInfo3.isVisible)
+                90f else 0f
+            binding.showMore3.animate().rotation(
+                rotation
+            ).withEndAction {
+                binding.fullInfo3.isVisible = !binding.fullInfo3.isVisible
+            }.duration = 500
+            binding.showMore3.animate()
         }
         binding.preview4.setOnClickListener {
-            binding.fullInfo4.isVisible = !binding.fullInfo4.isVisible
+            val rotation = if(!binding.fullInfo4.isVisible)
+                90f else 0f
+            binding.showMore4.animate().rotation(
+                rotation
+            ).withEndAction {
+                binding.fullInfo4.isVisible = !binding.fullInfo4.isVisible
+            }.duration = 500
+            binding.showMore4.animate()
         }
 
         super.onViewCreated(view, savedInstanceState)

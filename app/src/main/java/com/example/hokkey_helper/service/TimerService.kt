@@ -26,7 +26,6 @@ class TimerService : Service() {
 
     override fun onCreate() {
         super.onCreate()
-        Log.e("AAA","create")
         handler = Handler(Looper.getMainLooper())
         startTimer()
     }
@@ -42,7 +41,6 @@ class TimerService : Service() {
 
     private fun startTimer() {
         runnable = Runnable {
-            Log.e("AAA","aboba")
             currentTime++
             timerUpdateListener.onTimerUpdate(currentTime)
             handler.postDelayed(runnable, 1000)
